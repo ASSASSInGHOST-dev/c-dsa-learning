@@ -1,5 +1,18 @@
 #include <stdio.h>
 
+void sort(int n,int a[n]) {
+    int temp;
+    for(int pass=0;pass<n-1;pass++) {
+        for(int i=0;i<n-pass-1;i++) {
+            if(a[i]>a[i+1]) {
+                temp=a[i];
+                a[i]=a[i+1];
+                a[i+1]=temp;
+            }
+        }
+    }
+}
+
 int main() {
     int n,key;
     printf("Enter the number of elements in the array\n");
@@ -8,6 +21,7 @@ int main() {
     printf("Enter array elements\n");
     for(int i=0;i<n;i++)
     scanf("%d",&arr[i]);
+    sort(n,arr);
     int low=0,high=n-1,flag=0;
     int mid;
     printf("Enter the number to be searched\n");
