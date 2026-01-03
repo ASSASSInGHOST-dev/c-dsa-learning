@@ -15,11 +15,12 @@ int main() {
     for(int i=0;i<n;i++) {
         if(a[i]==num) {
             printf("%d found! It is the %dth element\n",num,i+1);
-            flag=1;
-            break;
+            flag+=1;
         }
     }
-    if(flag!=1)
+    if(flag==0)
     printf("%d not found!",num);
+    else
+    printf("%d found %d times",num,flag);
     return 0;
 }
