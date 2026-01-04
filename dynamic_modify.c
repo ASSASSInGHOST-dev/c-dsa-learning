@@ -1,6 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void modify(int **arr,int rows,int columns) {
+    for(int i=0;i<rows;i++) {
+        for(int j=0;j<columns;j++) {
+            arr[i][j]+=10;
+        }
+    }
+}
+
 int main() {
     int **a;
     int r,c;
@@ -34,7 +42,8 @@ int main() {
             scanf("%d",&a[j][k]);
         }
     }
-    printf("The Matrix is:\n");
+    printf("The modified matrix is:\n");
+    modify(a,r,c);
     for(int j=0;j<r;j++) {
         for(int k=0;k<c;k++) {
             printf("%d ",*(*(a+j)+k));

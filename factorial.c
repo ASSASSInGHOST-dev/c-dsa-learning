@@ -1,18 +1,16 @@
 #include <stdio.h>
 
-int sum(int n) {
-    if(n==0){
-        return 0;
-    }
+int facto(int n) {
+    if(n==0)
+    return 1;
     else
-    return n+sum(n-1);
+    return n*facto(n-1);
 }
 
 int main() {
     printf("Enter a number\n");
     int a;
     scanf("%d",&a);
-    printf("Sum is\n");
-    sum(a);
+    printf("factorial of %d is %d",a,facto(a));
     return 0;
 }
