@@ -2,7 +2,7 @@
 
 int main() {
     char src[]="Copying String without using Strcopy()";
-    char dest[]="";
+    char dest[sizeof(src)]="";
     int count=0;
     while(src[count]!='\0') {
         dest[count]=src[count];
