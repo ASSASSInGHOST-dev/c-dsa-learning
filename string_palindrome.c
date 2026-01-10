@@ -2,21 +2,22 @@
 #include <ctype.h>
 
 int main() {
-    char org[]="Reversing a string using loops";
-    char rev[sizeof(org)];
-    int count1=0, count2=sizeof(org)-2;
-    rev[count2+1]='\0';
-    while(org[count1]!='\0') {
-        rev[count2]=org[count1];
-        count1++;
-        count2-=1;
-    }
-    for (int i= 0;org[i]!='\0';i++) {
-        if (tolower(org[i])!=tolower(rev[i])) {
-            printf("Not Palindrome\n");
+    char org[]="Never ODD or Even";
+    int i=0, j=strlen(org)-1;
+    while(i>j) {
+        if(isspace(org[i])) {
+            i++;
+        }
+        if(isspace(org[j])) {
+            j--;
+        }
+        if(tolower(org[i]==org[j])) {
+            printf("Not Palindrome");
             return 0;
         }
+        i+=1;
+        j+=1;
     }
-    printf("Palindrome\n");
+    printf("Palindrome");
     return 0;
 }
